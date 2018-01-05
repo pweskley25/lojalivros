@@ -64,10 +64,8 @@ public class LivroController {
 
     @RequestMapping("/remove/{id}")
     public ModelAndView remover(@PathVariable int id, RedirectAttributes attributes) {
-        System.out.println("Chegou no controller o Id :" + id);
         this.livroDAO.remover(id);
         attributes.addFlashAttribute("sucesso", "Registro apagado!");
-        System.out.println("Voltou do Dao e usou o metodo remove.");
         return new ModelAndView("redirect:/livros");
     }
 
